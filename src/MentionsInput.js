@@ -478,6 +478,7 @@ class MentionsInput extends React.Component {
   }
 
   updateSuggestionsPosition = () => {
+    const { placementPosition } = this.props
     let { caretPosition } = this.state
 
     if (!caretPosition || !this.suggestionsRef) {
@@ -536,9 +537,15 @@ class MentionsInput extends React.Component {
       return
     }
 
-    this.setState({
-      suggestionsPosition: position,
-    })
+    if (placementPosition === 'top') {
+      this.setState({
+        suggestionsPosition: {left: position.left},
+      })
+    } else {
+      this.setState({
+        suggestionsPosition: position,
+      })
+    }
   }
 
   updateHighlighterScroll = () => {
