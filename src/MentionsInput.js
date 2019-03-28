@@ -93,6 +93,7 @@ const propTypes = {
     PropTypes.shape({ current: typeof Element === 'undefined' ? PropTypes.any : PropTypes.instanceOf(Element) }),
   ]),
 
+  placementPosition: PropTypes.oneOf(['top', 'bottom']),
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
