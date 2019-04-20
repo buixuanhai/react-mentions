@@ -139,6 +139,7 @@ const styled = defaultStyle(({ position }) => ({
   marginTop: 14,
   minWidth: 100,
   ...position,
+  right: position && position.left == undefined ? 0 : undefined,
 
   list: {
     margin: 0,
